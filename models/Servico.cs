@@ -5,7 +5,6 @@ namespace Charming_house.models
         public double ValorServico { get; set; }
         public string NomeServico { get; set; }
         public Servico() { }
-
         public Servico(double valorServico, string nomeServico)
         {
             this.ValorServico = valorServico;
