@@ -131,9 +131,16 @@ namespace Charming_house.views
             List<Servico> agendaServico = new List<Servico>();
             Funcionario agendaFuncionario = null;
 
-            System.Console.Write("Escolha um Servico: ");
-            int opxServico = EscolhaServico();
-            agendaServico.Add( servicos[opxServico-1] );
+            while(true){
+                System.Console.Write("Escolha um Servico: ");
+                int opxServico = EscolhaServico();
+                agendaServico.Add( servicos[opxServico-1] );
+
+                Console.Clear();
+                Console.Write("Deseja mais Servico? [S/N]: ");
+                string maisServico = Console.ReadLine().ToUpper();
+                if(maisServico != "S") break;
+            }
 
             System.Console.Write("Escolha um Funcionario: ");
             int opxFuncionario = EscolhaFuncionario();
@@ -146,7 +153,37 @@ namespace Charming_house.views
             return new List<Object>{ agendaServico, agendaFuncionario, data };
         }
 
-        public static void VerAgendamento(){
+        public static void VerAgendamento(Cliente cliente){
+            Console.Clear();
+            List<Agendamento> agendamentos = AgendamentoRepository.findAll();
+            List<Agendamento> clienteAgendamento = agendamentos.FindAll( x => x.Cliente.Usuario.Equals(cliente.Usuario)  );
+
+            Table.PrintLine();
+            Table.PrintRow("##### Agendamentos #####");
+            Table.PrintLine();
+            System.Console.WriteLine();
+            
+            foreach (Agendamento item in clienteAgendamento)
+            {
+                Table.PrintLine();
+                Table.PrintRow("FUNCIONARIO", "DATA");
+                Table.PrintLine();
+                Table.PrintRow(item.Funcionario.Nome, item.DataAgendamento.ToString() );
+                Table.PrintLine();
+                double soma = 0;
+                Table.PrintRow("SERVICO", "VALOR" );
+                Table.PrintLine();
+                foreach (Servico servico in item.Servico)
+                {   
+                    Table.PrintRow(servico.NomeServico, servico.ValorServico.ToString() );
+                    soma += servico.ValorServico;
+                }
+                Table.PrintLine();
+                Table.PrintRow("TOTAL");
+                Table.PrintRow(soma.ToString());
+                Table.PrintLine();
+                System.Console.WriteLine();
+            }
 
         }
 

@@ -15,8 +15,8 @@ namespace Charming_house.interfaces
 
         /* Métodos */
         Agendamento agendar(Funcionario funcionario, List<Servico> servicos, DateTime data);
-        bool pagar(double valor);
-        bool pagar(double valor, Pagamento metodo);
+        Pagar pagar(double valor);
+        Pagar pagar(double valor, Pagamento metodo);
 
     }
 }

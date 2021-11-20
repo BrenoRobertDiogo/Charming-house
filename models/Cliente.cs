@@ -26,14 +26,14 @@ namespace Charming_house.models
         }
 
         /* SOBRESCRITA */
-        public bool pagar(double valor)
+        public Pagar pagar(double valor)
         {
-            return true;
+            return new Pagar(valor, Pagamento.DINHEIRO);
         }
 
-        public bool pagar(double valor, Pagamento metodo)
+        public Pagar pagar(double valor, Pagamento metodo)
         {
-            return true;
+            return new Pagar(valor, metodo);
         }
 
         public bool salvarCartao (Cartao cartao)

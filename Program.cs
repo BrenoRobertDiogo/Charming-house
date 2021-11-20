@@ -5,6 +5,7 @@ using Charming_house.utils;
 using Charming_house.views;
 using Charming_house.models;
 using System.Collections.Generic;
+using Charming_house.repository;
 
 namespace Charming_house
 {
@@ -17,16 +18,11 @@ namespace Charming_house
             // Para a inicialização do banco de dados.
             SeedCreateData.CreateServicos();
             SeedCreateData.CreatePessoas();
+            SeedCreateData.CreateAgendamentos();
 
-            List<Object> carai = App.Agendar();
+            Cliente cliente = (Cliente) Autenticacao.autentica("breno", "12345");
 
-            List<Servico> ai = (List<Servico>) carai[0];
-            Funcionario func = (Funcionario) carai[1];
-            DateTime data = (DateTime) carai[2];
-
-            System.Console.WriteLine(ai[0].NomeServico);
-            System.Console.WriteLine(func.Nome);
-            System.Console.WriteLine(data);
+            App.VerAgendamento(cliente);
 
         }
     }
