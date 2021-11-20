@@ -3,12 +3,11 @@ using System;
 
 namespace Charming_house.models
 {
+    [Serializable]
     public class Agendamento
     {
         public DateTime DataAgendamento { get; set; }
-
         public Cliente Cliente { get; set; }
-
         public List<Servico> Servico { get; set; }
         public Funcionario Funcionario { get; set; }
         public Agendamento() { }

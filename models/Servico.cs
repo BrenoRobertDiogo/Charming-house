@@ -1,5 +1,8 @@
+using System;
+
 namespace Charming_house.models
-{
+{   
+    [Serializable]
     public class Servico
     {
         public double ValorServico { get; set; }

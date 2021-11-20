@@ -14,3 +14,21 @@ C:\Users\breno\Documents\GitHub\Charming house PA\Charming-house\obj\Debug\net5.
 C:\Users\breno\Documents\GitHub\Charming house PA\Charming-house\obj\Debug\net5.0\ref\Charming-house.dll
 C:\Users\breno\Documents\GitHub\Charming house PA\Charming-house\obj\Debug\net5.0\Charming-house.pdb
 C:\Users\breno\Documents\GitHub\Charming house PA\Charming-house\obj\Debug\net5.0\Charming-house.genruntimeconfig.cache
+C:\Users\Matheus\Desktop\ProgramacaoAvancada\Charming-house\obj\Debug\net5.0\Charming-house.csproj.AssemblyReference.cache
+C:\Users\Matheus\Desktop\ProgramacaoAvancada\Charming-house\obj\Debug\net5.0\Charming-house.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Matheus\Desktop\ProgramacaoAvancada\Charming-house\obj\Debug\net5.0\Charming-house.AssemblyInfoInputs.cache
+C:\Users\Matheus\Desktop\ProgramacaoAvancada\Charming-house\obj\Debug\net5.0\Charming-house.AssemblyInfo.cs
+C:\Users\Matheus\Desktop\ProgramacaoAvancada\Charming-house\obj\Debug\net5.0\Charming-house.csproj.CoreCompileInputs.cache
+C:\Users\Matheus\Desktop\ProgramacaoAvancada\Charming-house\obj\Debug\net5.0\Charming-house.dll
+C:\Users\Matheus\Desktop\ProgramacaoAvancada\Charming-house\obj\Debug\net5.0\ref\Charming-house.dll
+C:\Users\Matheus\Desktop\ProgramacaoAvancada\Charming-house\obj\Debug\net5.0\Charming-house.pdb
+C:\Users\Matheus\Desktop\ProgramacaoAvancada\Charming-house\bin\Debug\net5.0\Charming-house.exe
+C:\Users\Matheus\Desktop\ProgramacaoAvancada\Charming-house\bin\Debug\net5.0\Charming-house.deps.json
+C:\Users\Matheus\Desktop\ProgramacaoAvancada\Charming-house\bin\Debug\net5.0\Charming-house.runtimeconfig.json
+C:\Users\Matheus\Desktop\ProgramacaoAvancada\Charming-house\bin\Debug\net5.0\Charming-house.runtimeconfig.dev.json
+C:\Users\Matheus\Desktop\ProgramacaoAvancada\Charming-house\bin\Debug\net5.0\Charming-house.dll
+C:\Users\Matheus\Desktop\ProgramacaoAvancada\Charming-house\bin\Debug\net5.0\ref\Charming-house.dll
+C:\Users\Matheus\Desktop\ProgramacaoAvancada\Charming-house\bin\Debug\net5.0\Charming-house.pdb
+C:\Users\Matheus\Desktop\ProgramacaoAvancada\Charming-house\obj\Debug\net5.0\Charming-house.genruntimeconfig.cache
+C:\Users\Matheus\Desktop\ProgramacaoAvancada\Charming-house\bin\Debug\net5.0\BCrypt.Net-Next.dll
+C:\Users\Matheus\Desktop\ProgramacaoAvancada\Charming-house\obj\Debug\net5.0\Charming-house.csproj.CopyComplete
