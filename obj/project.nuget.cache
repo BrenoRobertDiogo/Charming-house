@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "L0i/ukuo5pI6UPqPOLb/Hh8kjUO0NwIvKY6udqVBoJyLldRI7pRHieb967KB4fuKTeQN1gZSsQLL/hRxSMMw5g==",
+  "dgSpecHash": "M4sURitVDkzWK5v3MuSleL44z3TbZlQckCyJ3GNo5RTDqxiU9QT6kEAudCl3lrLTHzcydloi7QbNvgKYeoZMNA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Matheus\\Desktop\\ProgramacaoAvancada\\Charming-house\\Charming-house.csproj",
+  "projectFilePath": "C:\\Users\\breno\\Documents\\GitHub\\Charming house PA\\Charming-house\\Charming-house.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Matheus\\.nuget\\packages\\bcrypt.net-next\\4.0.2\\bcrypt.net-next.4.0.2.nupkg.sha512"
+    "C:\\Users\\breno\\.nuget\\packages\\bcrypt.net-next\\4.0.2\\bcrypt.net-next.4.0.2.nupkg.sha512"
   ],
   "logs": []
 }

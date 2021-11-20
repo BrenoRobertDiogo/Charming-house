@@ -10,23 +10,28 @@ namespace Charming_house.views
 {
     public class App
     {
-        public static void Menu(){
+        public static void Menu()
+        {
             Console.Clear();
             Table.PrintLine();
             Table.PrintRow("##### Bem Vindo #####");
             Table.PrintLine();
-            Table.PrintRow("1","Entrar");
-            Table.PrintRow("2","Cadastrar");
-            Table.PrintRow("0","Sair");
+            Table.PrintRow("1", "Entrar");
+            Table.PrintRow("2", "Cadastrar");
+            Table.PrintRow("0", "Sair");
             Table.PrintLine();
         }
-        
-        public static int EscolhaEntrada(){
+
+        public static int EscolhaEntrada()
+        {
             Menu();
             int opx = int.Parse(Console.ReadLine());
-            if(opx >= 0 && opx <=2){
+            if (opx >= 0 && opx <= 2)
+            {
                 return opx;
-            }else{
+            }
+            else
+            {
                 Console.Clear();
                 Logger.Warn("Opção invalida ...\n");
                 Thread.Sleep(1500);
@@ -34,23 +39,28 @@ namespace Charming_house.views
             }
         }
 
-        public static void MenuPrograma(){
+        public static void MenuPrograma()
+        {
             Console.Clear();
             Table.PrintLine();
             Table.PrintRow("##### Area do Cliente #####");
             Table.PrintLine();
-            Table.PrintRow("1","Agendar");
-            Table.PrintRow("2","Ver Agendamentos");
-            Table.PrintRow("0","Sair");
+            Table.PrintRow("1", "Agendar");
+            Table.PrintRow("2", "Ver Agendamentos");
+            Table.PrintRow("0", "Sair");
             Table.PrintLine();
         }
 
-        public static int EscolhaPrograma(){
+        public static int EscolhaPrograma()
+        {
             MenuPrograma();
             int opx = int.Parse(Console.ReadLine());
-            if(opx >= 0 && opx <=2){
+            if (opx >= 0 && opx <= 2)
+            {
                 return opx;
-            }else{
+            }
+            else
+            {
                 Console.Clear();
                 Logger.Warn("Opção invalida ...\n");
                 Thread.Sleep(1500);
@@ -58,30 +68,36 @@ namespace Charming_house.views
             }
         }
 
-        public static int MenuServico(){
+        public static int MenuServico()
+        {
             Console.Clear();
             List<Servico> servicos = ServicoRepository.findAll();
             Table.PrintLine();
             Table.PrintRow("##### Serviços Disponiveis #####");
             Table.PrintLine();
-            Table.PrintRow("ID", "SERVIÇO","VALOR");
+            Table.PrintRow("ID", "SERVIÇO", "VALOR");
             Table.PrintLine();
             int conta = 1;
             foreach (Servico item in servicos)
             {
-                Table.PrintRow( conta.ToString() ,item.NomeServico , item.ValorServico.ToString() );
+                Table.PrintRow(conta.ToString(), item.NomeServico, item.ValorServico.ToString());
                 conta++;
             }
             Table.PrintLine();
             return servicos.Count;
         }
 
-        public static int EscolhaServico(){
+        public static int EscolhaServico()
+        {
             int quantidade = MenuServico();
+            System.Console.Write("Escolha um Servico: ");
             int opx = int.Parse(Console.ReadLine());
-            if( opx >= 1 && opx < quantidade + 1 ){
+            if (opx >= 1 && opx < quantidade + 1)
+            {
                 return opx;
-            }else{
+            }
+            else
+            {
                 Console.Clear();
                 Logger.Warn("Opção invalida ...\n");
                 Thread.Sleep(1500);
@@ -89,7 +105,8 @@ namespace Charming_house.views
             }
         }
 
-        public static int MenuFuncionario(){
+        public static int MenuFuncionario()
+        {
             Console.Clear();
             List<Pessoa> pessoas = PessoaRepository.findAll();
             Table.PrintLine();
@@ -99,10 +116,11 @@ namespace Charming_house.views
             Table.PrintLine();
             int conta = 1;
             foreach (Pessoa item in pessoas)
-            {   
+            {
                 Funcionario func = Cast.GetFuncionario(item);
-                if( func != null ){
-                    Table.PrintRow( conta.ToString() , func.Nome , func.AnosExperiencia.ToString() );
+                if (func != null)
+                {
+                    Table.PrintRow(conta.ToString(), func.Nome, func.AnosExperiencia.ToString());
                     conta++;
                 }
             }
@@ -110,12 +128,18 @@ namespace Charming_house.views
             return conta;
         }
 
-        public static int EscolhaFuncionario(){
+        public static int EscolhaFuncionario()
+        {
+
             int quantidade = MenuFuncionario();
+            System.Console.Write("Escolha um Funcionario: ");
             int opx = int.Parse(Console.ReadLine());
-            if(opx >= 1 && opx < quantidade ){
+            if (opx >= 1 && opx < quantidade)
+            {
                 return opx;
-            }else{
+            }
+            else
+            {
                 Console.Clear();
                 Logger.Warn("Opção invalida ...\n");
                 Thread.Sleep(1500);
@@ -123,59 +147,61 @@ namespace Charming_house.views
             }
         }
 
-        public static List<Object> Agendar(){
+        public static Agendamento Agendar(Cliente cliente)
+        {
             List<Pessoa> pessoas = PessoaRepository.findAll();
             List<Servico> servicos = ServicoRepository.findAll();
-            List<Pessoa> funcionarios = pessoas.FindAll( x  => Cast.GetFuncionario(x) != null );
+            List<Pessoa> funcionarios = pessoas.FindAll(x => Cast.GetFuncionario(x) != null);
 
             List<Servico> agendaServico = new List<Servico>();
             Funcionario agendaFuncionario = null;
 
-            while(true){
-                System.Console.Write("Escolha um Servico: ");
+            while (true)
+            {
                 int opxServico = EscolhaServico();
-                agendaServico.Add( servicos[opxServico-1] );
+                agendaServico.Add(servicos[opxServico - 1]);
 
                 Console.Clear();
                 Console.Write("Deseja mais Servico? [S/N]: ");
                 string maisServico = Console.ReadLine().ToUpper();
-                if(maisServico != "S") break;
+                if (maisServico != "S") break;
             }
 
-            System.Console.Write("Escolha um Funcionario: ");
             int opxFuncionario = EscolhaFuncionario();
-            agendaFuncionario = (Funcionario) funcionarios[opxFuncionario-1];
-
+            agendaFuncionario = (Funcionario)funcionarios[opxFuncionario - 1];
+            Console.Clear();
             System.Console.Write("Informe uma data para agendamento: ");
             string strData = Console.ReadLine();
             DateTime data = Data.Paser(strData);
 
-            return new List<Object>{ agendaServico, agendaFuncionario, data };
+            return cliente.agendar(agendaFuncionario, agendaServico, data);
+            // return new List<Object>{ agendaServico, agendaFuncionario, data };
         }
 
-        public static void VerAgendamento(Cliente cliente){
+        public static void VerAgendamento(Cliente cliente)
+        {
             Console.Clear();
             List<Agendamento> agendamentos = AgendamentoRepository.findAll();
-            List<Agendamento> clienteAgendamento = agendamentos.FindAll( x => x.Cliente.Usuario.Equals(cliente.Usuario)  );
+            List<Agendamento> clienteAgendamento = agendamentos.FindAll(x => x.Cliente.Usuario.Equals(cliente.Usuario));
 
             Table.PrintLine();
             Table.PrintRow("##### Agendamentos #####");
             Table.PrintLine();
             System.Console.WriteLine();
-            
+
             foreach (Agendamento item in clienteAgendamento)
             {
                 Table.PrintLine();
                 Table.PrintRow("FUNCIONARIO", "DATA");
                 Table.PrintLine();
-                Table.PrintRow(item.Funcionario.Nome, item.DataAgendamento.ToString() );
+                Table.PrintRow(item.Funcionario.Nome, item.DataAgendamento.ToString());
                 Table.PrintLine();
                 double soma = 0;
-                Table.PrintRow("SERVICO", "VALOR" );
+                Table.PrintRow("SERVICO", "VALOR");
                 Table.PrintLine();
                 foreach (Servico servico in item.Servico)
-                {   
-                    Table.PrintRow(servico.NomeServico, servico.ValorServico.ToString() );
+                {
+                    Table.PrintRow(servico.NomeServico, servico.ValorServico.ToString());
                     soma += servico.ValorServico;
                 }
                 Table.PrintLine();
@@ -187,7 +213,8 @@ namespace Charming_house.views
 
         }
 
-        public static void Sair(){
+        public static void Sair()
+        {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("##########################################################");

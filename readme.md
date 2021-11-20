@@ -5,3 +5,4 @@
 ```bash
 dotnet add package BCrypt.Net-Next --version 4.0.2
 ```
+
