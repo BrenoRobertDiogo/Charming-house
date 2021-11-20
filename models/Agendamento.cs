@@ -10,7 +10,7 @@ namespace Charming_house.models
         public Cliente Cliente { get; set; }
         public List<Servico> Servico { get; set; }
         public Funcionario Funcionario { get; set; }
-        public Agendamento() { }
+        public Pagar Pagar { get; set; }
 
         public Agendamento(DateTime dataAgendamento, Cliente cliente, List<Servico> Servico, Funcionario Funcionario)
         {

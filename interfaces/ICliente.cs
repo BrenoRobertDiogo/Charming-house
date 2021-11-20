@@ -1,4 +1,6 @@
 using Charming_house.models;
+using Charming_house.Enum;
+using System;
 using System.Collections.Generic;
 
 namespace Charming_house.interfaces
@@ -12,9 +14,9 @@ namespace Charming_house.interfaces
         double Saldo { get; set; }
 
         /* Métodos */
-        Agendamento agendar(Funcionario funcionario, List<Servico> Servicos);
+        Agendamento agendar(Funcionario funcionario, List<Servico> servicos, DateTime data);
         bool pagar(double valor);
-        bool pagar(double valor, string metodo);
+        bool pagar(double valor, Pagamento metodo);
 
     }
 }

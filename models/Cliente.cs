@@ -1,8 +1,7 @@
 using System.Collections.Generic;
 using Charming_house.interfaces;
 using System;
-
-using System;
+using Charming_house.Enum;
 
 namespace Charming_house.models
 {
@@ -21,21 +20,22 @@ namespace Charming_house.models
             this.Saldo = 0.00;
         }
 
-        public Agendamento agendar(Funcionario funcionario, List<Servico> Servicos)
+        public Agendamento agendar(Funcionario funcionario, List<Servico> servicos, DateTime data)
         {
-            return new Agendamento();
+            return new Agendamento(data, this, servicos, funcionario);
         }
-
 
         /* SOBRESCRITA */
         public bool pagar(double valor)
         {
             return true;
         }
-        public bool pagar(double valor, string metodo)
+
+        public bool pagar(double valor, Pagamento metodo)
         {
             return true;
         }
+
         public bool salvarCartao (Cartao cartao)
         {
             if (this.Cartao == null)
